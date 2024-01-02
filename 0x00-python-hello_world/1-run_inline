@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# redirect python code
+echo $PYCODE | python
