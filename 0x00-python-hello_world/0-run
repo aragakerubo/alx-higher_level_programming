@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # run main.py
-python $PYFILE
+python3 $PYFILE
