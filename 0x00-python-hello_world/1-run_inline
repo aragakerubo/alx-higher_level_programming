@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # redirect python code
-echo $PYCODE | python3
+python3 <<< $PYCODE
