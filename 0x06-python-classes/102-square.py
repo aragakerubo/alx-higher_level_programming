@@ -46,7 +46,7 @@ class Square:
         return self.area() > other.area()
 
     def __ge__(self, other):
-        """Returns True if the square is greater than or equal to another square."""
+        """Returns True if the square is greater/equal to another square."""
         return self.area() >= other.area()
 
     def __lt__(self, other):
@@ -54,5 +54,5 @@ class Square:
         return self.area() < other.area()
 
     def __le__(self, other):
-        """Returns True if the square is less than or equal to another square."""
+        """Returns True if the square is less/equal to another square."""
         return self.area() <= other.area()
