@@ -1,6 +1,6 @@
-==================================
-How to Use 0-add_integer.py module
-==================================
+======================================
+How to use the 0-add_integer.py module
+======================================
 
 This module contains a function `add_integer(a, b=98)` that adds two integers.
 
