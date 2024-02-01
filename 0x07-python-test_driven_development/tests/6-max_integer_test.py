@@ -75,19 +75,22 @@ class TestMaxInteger(unittest.TestCase):
         """
         Test max_integer with a list of strings and integers.
         """
-        self.assertEqual(max_integer(["a", 2, "c", 4]), 4)
+        with self.assertRaises(TypeError):
+            max_integer(["a", 2, "c", 4])
 
     def test_max_string_float(self):
         """
         Test max_integer with a list of strings and floats.
         """
-        self.assertEqual(max_integer(["a", 2.2, "c", 4.4]), 4.4)
+        with self.assertRaises(TypeError):
+            max_integer(["a", 2.2, "c", 4.4])
 
     def test_max_string_int_float(self):
         """
         Test max_integer with a list of strings, integers, and floats.
         """
-        self.assertEqual(max_integer(["a", 2, "c", 4.4]), 4.4)
+        with self.assertRaises(TypeError):
+            max_integer(["a", 2, "c", 4.4])
 
     def test_max_integer_negative(self):
         """
