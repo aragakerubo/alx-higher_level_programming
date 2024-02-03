@@ -19,6 +19,16 @@ class Rectangle:
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
+    def __str__(self):
+        """Print the rectangle with the character #."""
+        if self.width == 0 or self.height == 0:
+            return ""
+        return ((str(self.print_symbol) * self.width + "\n") * self.height)[:-1]
+
+    def __repr__(self):
+        """Return a string representation of the rectangle."""
+        return "Rectangle({}, {})".format(self.width, self.height)
+
     @property
     def width(self):
         """Property to retrieve width."""
