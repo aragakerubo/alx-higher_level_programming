@@ -18,30 +18,37 @@ def matrix_mul(m_a, m_b):
 
     Raises:
         TypeError: If m_a is not a list of lists of integers/floats.
-        TypeError: If m_b is not a list of lists of integers/floats.
         TypeError: If rows of m_a are not the same size.
+        TypeError: If m_b is not a list of lists of integers/floats.
         TypeError: If rows of m_b are not the same size.
-        TypeError: If m_a or m_b are empty lists.
-        TypeError: If m_a or m_b contain elements that are not integers/floats.
-        ValueError: If m_a or m_b are not 2D matrices.
-        ValueError: If m_a or m_b cannot be multiplied.
+        ValueError: If m_a or m_b are empty.
+        TypeError: If m_a or m_b contain non-integer/float elements.
+        ValueError: If m_a and m_b can't be multiplied.
     """
-    if not isinstance(m_a, list) or m_a == []:
-        raise TypeError("m_a must be a list of lists" " of integers/floats")
+    if not isinstance(m_a, list):
+        raise TypeError("m_a must be a list")
+    if m_a == []:
+        raise ValueError("m_a can't be empty")
     if not all(isinstance(row, list) for row in m_a):
-        raise TypeError("m_a must be a list of lists" " of integers/floats")
-    if not all(isinstance(num, (int, float)) for row in m_a for num in row):
-        raise TypeError("m_a must be a list of lists" " of integers/floats")
-    if not isinstance(m_b, list) or m_b == []:
-        raise TypeError("m_b must be a list of lists" " of integers/floats")
-    if not all(isinstance(row, list) for row in m_b):
-        raise TypeError("m_b must be a list of lists" " of integers/floats")
-    if not all(isinstance(num, (int, float)) for row in m_b for num in row):
-        raise TypeError("m_b must be a list of lists" " of integers/floats")
+        raise TypeError("m_a must be a list of lists")
+    if not all(row for row in m_a):
+        raise ValueError("m_a can't be empty")
     if not all(len(row) == len(m_a[0]) for row in m_a):
-        raise TypeError("m_a must be a matrix")
+        raise TypeError("each row of m_a must be of the same size")
+    if not all(isinstance(num, (int, float)) for row in m_a for num in row):
+        raise TypeError("m_a should contain only integers or floats")
+    if not isinstance(m_b, list):
+        raise TypeError("m_b must be a list")
+    if m_b == []:
+        raise TypeError("m_b can't be empty")
+    if not all(isinstance(row, list) for row in m_b):
+        raise TypeError("m_b must be a list of lists")
+    if not all(row for row in m_b):
+        raise ValueError("m_b can't be empty")
     if not all(len(row) == len(m_b[0]) for row in m_b):
-        raise TypeError("m_b must be a matrix")
+        raise TypeError("each row of m_b must be of the same size")
+    if not all(isinstance(num, (int, float)) for row in m_b for num in row):
+        raise TypeError("m_b should contain only integers or floats")
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
     return [
