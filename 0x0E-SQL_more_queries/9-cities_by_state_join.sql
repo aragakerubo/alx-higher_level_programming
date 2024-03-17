@@ -3,7 +3,7 @@
 -- * Results must be sorted in ascending order by cities.id
 -- * You can use only one SELECT statement
 -- * The database name will be passed as an argument of the mysql command.
-USE hbtn_0d_usa;
+-- USE hbtn_0d_usa;
 SELECT cities.id, cities.name, states.name
 FROM cities, states
 WHERE cities.state_id = states.id
