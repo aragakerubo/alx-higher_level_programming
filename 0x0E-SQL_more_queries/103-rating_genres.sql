@@ -3,7 +3,7 @@
 -- * Results must be sorted in descending order by their rating
 -- * You can use only one SELECT statement
 -- * The database name will be passed as an argument of the mysql command
-USE hbtn_0d_tvshows_rate;
+-- USE hbtn_0d_tvshows_rate;
 SELECT tv_genres.name, SUM(rating) AS rating_sum
 FROM tv_genres
 JOIN tv_show_genres
