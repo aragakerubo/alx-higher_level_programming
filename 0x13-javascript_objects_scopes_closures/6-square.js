@@ -1,9 +1,9 @@
 #!/usr/bin/node
 
-const Square = require('./5-square');
+const SquareInit = require('./5-square');
 
-module.exports = class Square extends Square {
-  charPrint (c) {
+module.exports = class Square extends SquareInit {
+  charPrint(c) {
     if (c === undefined) {
       this.print();
     } else {
