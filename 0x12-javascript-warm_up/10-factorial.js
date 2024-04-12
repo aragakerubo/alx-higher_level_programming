@@ -9,12 +9,12 @@ const intArg = parseInt(args[2]);
  *
  * @returns {number} - Factorial of n
  */
-function factorial(n) {
+function factorial (n) {
   if (isNaN(n) || n === 0) {
     return 1;
   }
 
-	return n * factorial(n - 1);
+  return n * factorial(n - 1);
 }
 
 console.log(factorial(intArg));
