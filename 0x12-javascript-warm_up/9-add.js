@@ -10,8 +10,8 @@ const num2 = parseInt(args[3]);
  * @param {number} b
  * @returns {number} - sum of a and b
  */
-function add(a, b) {
-    return a + b;
+function add (a, b) {
+  return a + b;
 }
 
 if (isNaN(num1) || isNaN(num2)) {
