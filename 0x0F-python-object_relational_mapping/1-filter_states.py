@@ -17,7 +17,9 @@ if __name__ == "__main__":
         charset="utf8",
     )
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cursor.execute(
+        "SELECT * FROM states WHERE name LIKE 'N%' COLLATE utf8_bin ORDER BY id ASC"
+    )
     for row in cursor.fetchall():
         print(row)
     cursor.close()
